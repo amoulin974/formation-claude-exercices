@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cpp:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y ninja-build libgtest-dev
+      - run: cmake -S cpp -B cpp/build -G Ninja -DTOURNOI_SANITIZERS=ON
+      - run: cmake --build cpp/build
+      - run: ctest --test-dir cpp/build --output-on-failure
+
+  php:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+      - run: composer install --no-interaction
+        working-directory: php
+      - run: vendor/bin/phpunit
+        working-directory: php

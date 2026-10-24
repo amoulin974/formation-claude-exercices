@@ -1,0 +1,21 @@
+{
+    "name": "formation-claude/tournoi",
+    "description": "Gestion de tournoi : support d'exercices de la formation Claude",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": { "Tournoi\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tournoi\\Tests\\": "tests/" }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
