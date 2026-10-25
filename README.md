@@ -24,6 +24,23 @@ make test-php    # PHP seul
 
 Sans Docker, ouvrez le dépôt dans **GitHub Codespaces** : la configuration est la même.
 
+## Utiliser l'outil en ligne de commande
+
+Les deux implémentations offrent les mêmes commandes.
+
+```bash
+# C++ (après make test-cpp)
+cpp/build/tournoi-cli calendrier Anglet Bayonne Biarritz Dax
+cpp/build/tournoi-cli classement donnees/resultats-2026.csv
+
+# PHP
+php php/bin/tournoi.php calendrier Anglet Bayonne Biarritz Dax
+php php/bin/tournoi.php classement donnees/resultats-2026.csv
+```
+
+Le dossier `donnees/` contient les résultats d'une saison au format CSV
+(`domicile,exterieur,buts_domicile,buts_exterieur`).
+
 ## Outils inclus dans le conteneur
 
 g++, CMake, Ninja, GoogleTest, gdb, Valgrind, PHP 8.3, Composer, Xdebug, Node.js,

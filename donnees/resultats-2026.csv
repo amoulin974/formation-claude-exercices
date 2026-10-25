@@ -1,0 +1,16 @@
+domicile,exterieur,buts_domicile,buts_exterieur
+Anglet,Bayonne,0,3
+Biarritz,Dax,1,2
+Hendaye,Pau,2,2
+Bayonne,Biarritz,1,1
+Dax,Hendaye,3,1
+Pau,Anglet,1,0
+Anglet,Dax,1,1
+Biarritz,Hendaye,2,0
+Pau,Bayonne,0,4
+Bayonne,Dax,0,1
+Hendaye,Anglet,1,1
+Biarritz,Pau,3,1
+Dax,Pau,2,0
+Hendaye,Bayonne,1,2
+Anglet,Biarritz,1,2

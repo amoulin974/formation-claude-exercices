@@ -11,7 +11,7 @@ if(TOURNOI_SANITIZERS)
   add_link_options(-fsanitize=address,undefined)
 endif()
 
-add_library(tournoi src/calendrier.cpp)
+add_library(tournoi src/calendrier.cpp src/classement.cpp)
 target_include_directories(tournoi PUBLIC include)
 target_compile_options(tournoi PRIVATE -Wall -Wextra -Wpedantic)
 
@@ -28,7 +28,7 @@ if(NOT GTest_FOUND)
 endif()
 
 enable_testing()
-add_executable(tests tests/test_calendrier.cpp)
+add_executable(tests tests/test_calendrier.cpp tests/test_classement.cpp)
 target_link_libraries(tests PRIVATE tournoi GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(tests)
