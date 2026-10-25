@@ -4,3 +4,7 @@ php/vendor/
 .phpunit.result.cache
 CLAUDE.local.md
 .vscode/
+agent/.venv/
+__pycache__/
+donnees/*.sqlite
+.claude/worktrees/

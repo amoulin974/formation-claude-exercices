@@ -25,3 +25,9 @@ jobs:
         working-directory: php
       - run: vendor/bin/phpunit
         working-directory: php
+
+  agent:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s agent

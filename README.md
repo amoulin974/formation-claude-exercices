@@ -9,6 +9,7 @@ Le même domaine, la gestion de tournoi, est implémenté dans deux langages :
 |---|---|---|
 | `cpp/` | C++20 | CMake, GoogleTest |
 | `php/` | PHP 8.3 | Composer, PHPUnit |
+| `agent/` | Python 3 | Agent minimal construit sur l'API (séance 3), `unittest` |
 
 ## Démarrer
 
@@ -48,6 +49,20 @@ la CLI Claude Code et l'extension Claude Code pour VS Code.
 
 La configuration Claude (`~/.claude`) est conservée dans un volume Docker :
 vous restez connecté même après une reconstruction du conteneur.
+
+## Agent minimal (séance 3)
+
+`agent/mini_agent.py` montre la boucle d'un agent en une centaine de lignes : un appel au modèle,
+l'exécution des outils demandés, le renvoi des résultats. Il faut une clé d'API
+(compte sur la console Claude, distinct de l'abonnement Claude).
+
+```bash
+make agent                                   # crée agent/.venv et installe le SDK
+export ANTHROPIC_API_KEY=...
+agent/.venv/bin/python agent/mini_agent.py "Les tests passent-ils ?"
+```
+
+Les tests de l'agent (`make test-agent`) n'ont pas besoin de clé : ils utilisent un faux client.
 
 ## Sanitizers (C++)
 
